@@ -11,13 +11,15 @@ import PdfBrowse from './Browse/PdfBrowse'
 import Succes from './Ui_Compo/Sucess_compo'
 import Chat from './Chat_page.js/Chat'
 import Onboard_screens from './Onboard/Onboard_screens'
+import SplashScreen from './SplashScreen/SplashScreen'
 
 
 export default function App() {
   const Stack=createStackNavigator()
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Onboard' screenOptions={{headerShown:false}}>
+      <Stack.Navigator initialRouteName='Splash' screenOptions={{headerShown:false}}>
+        <Stack.Screen name='Splash' component={SplashScreen}/>
         <Stack.Screen name='Onboard' component={Onboard_screens}/>
         <Stack.Screen name='Login' component={LoginPage}/>
         <Stack.Screen name='SignUp' component={SignPage}/>

@@ -16,7 +16,7 @@ export default function PdfBrowse({navigation}) {
         data.append('File',uri)
         setLoad(true)
         let res = await fetch(
-          'http://192.168.1.4:3000/api/v1/ChatPdf',
+          'http://192.168.1.6:3000/api/v1/ChatPdf',
           {
             method: 'POST',
             body: data,

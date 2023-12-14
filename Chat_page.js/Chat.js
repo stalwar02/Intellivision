@@ -5,12 +5,10 @@ import { View } from 'react-native';
 
 const Chat = ({route,navigation}) => {
   const [messages, setMessages] = useState([]);
-  console.log("Chat Page")
-  console.log()
   const sendMess=async(question)=>{
     try{
       console.log(question)
-      const response=await axios.post("http://192.168.1.4:3000/api/v1/ChattingPdf",{
+      const response=await axios.post("http://192.168.1.6:3000/api/v1/ChattingPdf",{
         fileName:route.params.file,
         question:question
       })
