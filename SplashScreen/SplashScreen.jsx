@@ -9,11 +9,10 @@ const SplashScreen = ({ navigation }) => {
   useEffect(() => {
     Animated.timing(logoOpacity, {
       toValue: 1,
-      duration: 1500, // Adjust timing as needed
+      duration: 1500,
       useNativeDriver: true,
     }).start(() => {
-      // Navigate to your main screen after the animation completes
-      navigation.replace('Onboard'); // Replace with your main screen name
+      navigation.replace('Onboard');
     });
   }, [navigation, logoOpacity]);
 
@@ -34,13 +33,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#000', // Adjust background color as needed
+    backgroundColor: '#000',
   },
   logo: {
-    width: 200, // Adjust size as needed
+    width: 200,
     height: 200,
     alignContent:'center',
-    justifyContent:'center' // Adjust size as needed
+    justifyContent:'center'
   },
 });
 
