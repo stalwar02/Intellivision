@@ -1,61 +1,201 @@
-import { View,Dimensions, Text,ImageBackground,ScrollView, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
-import PDF from './Options/PdfPage'
-import Audio from './Options/AudioPage'
-import Web from './Options/WebsitePage'
+/* eslint-disable react-native/no-inline-styles */
+import {
+  View,
+  Dimensions,
+  Text,
+  ImageBackground,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
+import React from 'react';
+import {TextInput} from 'react-native-gesture-handler';
+import {Image} from 'react-native-animatable';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 export default function MainPage({navigation}) {
-  const [opt,setOpt]=useState('PDF')
-  function onCh(){
-    if(opt==='PDF'){
-      return(
-        <PDF navi={navigation}></PDF>
-      )
-    }
-    else if(opt==='Audio'){
-      return(
-        <Audio></Audio>
-      )
-    }
-    else if(opt==='Web'){
-      return(
-        <Web></Web>
-      )
-    }
-  }
   return (
-    <ImageBackground source={require("./Assets/pxfuel2.jpg")} style={{flex:1}} blurRadius={5}>
-    <View style={{ flex: 1, paddingTop: windowHeight * 0.02 }}>
-    <View style={{ height: windowHeight * 0.06, width: "100%", flexDirection: 'row', paddingHorizontal: windowWidth * 0.05 }}>
-          <View style={{ height: windowHeight * 0.06, width: windowHeight * 0.06, borderRadius: windowWidth * 0.05, justifyContent: 'center' }}>
-            <Text style={{ fontSize: windowWidth * 0.065, fontWeight: '800' }}>i</Text>
-          </View>
-          <Text style={{ alignSelf: 'center', marginLeft: windowWidth * 0.2, fontSize: windowWidth * 0.056, fontWeight: '800' }}>INTELIVISION</Text>
+    <>
+      <ScrollView
+        style={{
+          height: windowHeight,
+          backgroundColor: '#1e1b38',
+          paddingHorizontal: windowWidth * 0.045,
+          paddingTop: 10,
+        }}>
+        <Text
+          style={{
+            color: 'white',
+            fontSize: windowWidth * 0.07,
+            fontWeight: 'bold',
+            alignSelf: 'flex-start',
+          }}>
+          Welcome Back
+        </Text>
+        <Text
+          style={{
+            color: 'white',
+            fontSize: windowWidth * 0.04,
+            fontWeight: '300',
+            alignSelf: 'flex-start',
+          }}>
+          Ankit Kumar Shah
+        </Text>
+        <ScrollView horizontal={true}>
+          <EachCard
+            title={'TALK WITH PDF'}
+            discreption={'Chat with your pdf and get the best out of it'}
+            image={require('./Assets/pdf.png')}
+            route={''}
+          />
+          <EachCard
+            title={'DIVE IN WEBPAGE'}
+            discreption={
+              'Let AI read the web page for you and get the best out of it'
+            }
+            image={require('./Assets/webpage.png')}
+            route={''}
+          />
+          <EachCard
+            title={'TALK WITH AUDIO'}
+            discreption={'Talk wit your audio and get the best out of it'}
+            image={require('./Assets/audio.png')}
+            route={''}
+          />
+        </ScrollView>
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+
+            paddingTop: 20,
+          }}>
+          <Image
+            source={{
+              uri: 'https://icon-library.com/images/white-folder-icon-png/white-folder-icon-png-22.jpg',
+            }}
+            style={{
+              height: windowWidth * 0.05,
+              width: windowWidth * 0.05,
+              objectFit: 'contain',
+            }}
+          />
+          <Text style={{fontSize: windowWidth * 0.05, paddingLeft: 10}}>
+            Your Files
+          </Text>
         </View>
-        <View style={{ height: windowHeight * 0.15, width: '100%', marginTop: windowHeight * 0.1, paddingHorizontal: windowWidth * 0.05 }}>
-          <Text style={{ fontSize: windowWidth * 0.1, fontWeight: '800' }}>EXPLORE</Text>
-          <Text style={{ fontSize: windowWidth * 0.15, fontWeight: '300' }}>the world</Text>
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            paddingTop: 100,
+          }}>
+          <Text style={{color: 'white'}}>No files 😕</Text>
         </View>
-        <View style={{ height: windowHeight * 0.5, width: '100%', flexDirection: 'row', marginTop: windowHeight * 0.08 }}>
-          <View style={{ alignItems: 'flex-start', height: windowHeight * 0.45, justifyContent: 'space-evenly' }}>
-            <TouchableOpacity onPress={() => setOpt('PDF')} style={{ height: 'auto', width: 'auto' }}>
-              <Text style={{ transform: [{ rotate: '270deg' }], width: windowHeight * 0.13, fontWeight: '800', color: opt === 'PDF' ? 'rgba(90, 34, 170,1)' : 'white' }}>PDF</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => setOpt('Audio')}>
-              <Text style={{ transform: [{ rotate: '270deg' }], width: windowHeight * 0.13, fontWeight: '800', color: opt === 'Audio' ? 'purple' : 'white' }}>AUDIO</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => setOpt('Web')}>
-              <Text style={{ transform: [{ rotate: '270deg' }], width: windowHeight * 0.13, fontWeight: '800', color: opt === 'Web' ? 'purple' : 'white' }}>WEB</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={{ height: windowHeight * 0.42, marginLeft: windowWidth * 0.05, width: "80%" }}>
-            {onCh()}
-          </View>
+      </ScrollView>
+      <View
+        style={{
+          position: 'absolute',
+          alignItems: 'center',
+          justifyContent: 'center',
+          bottom: 0,
+          width: windowWidth,
+          paddingBottom: 20,
+        }}>
+        <TextInput
+          style={{
+            marginTop: windowHeight * 0.025,
+            width: windowWidth * 0.9,
+            marginHorizontal: windowWidth * 0.0015,
+            backgroundColor: '#292250',
+            paddingHorizontal: 10,
+            borderRadius: 20,
+            fontSize: windowWidth * 0.04,
+            paddingVertical: 20,
+          }}
+          placeholder="Start Chatting with AI"
+          placeholderTextColor={'rgb(197, 195, 195)'}
+        />
+      </View>
+    </>
+  );
+}
+
+function EachCard({title, discreption, route, image}) {
+  return (
+    <View
+      style={{
+        height: windowHeight * 0.39,
+        width: windowWidth * 0.7,
+        backgroundColor: '#493fa0',
+        borderRadius: 10,
+        marginRight: windowWidth * 0.035,
+        marginTop: windowHeight * 0.015,
+        overflow: 'hidden',
+        elevation: 20,
+        paddingBottom: windowHeight * 0.02,
+      }}>
+      <Image
+        style={{
+          flex: 1,
+          borderBottomLeftRadius: 20,
+          borderBottomRightRadius: 20,
+          width: '100%',
+          objectFit: 'contain',
+        }}
+        source={image}
+      />
+      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <View
+          style={{
+            maxWidth: windowWidth * 0.5,
+          }}>
+          <Text
+            style={{
+              color: 'white',
+              fontSize: windowWidth * 0.05,
+              fontWeight: 'bold',
+              padding: windowWidth * 0.028,
+            }}>
+            {title}
+          </Text>
+          <Text
+            style={{
+              color: 'white',
+              fontSize: windowWidth * 0.03,
+              paddingHorizontal: windowWidth * 0.028,
+            }}>
+            {discreption}
+          </Text>
         </View>
+        <View
+          style={{
+            backgroundColor: 'black',
+            borderWidth: 2,
+            borderRadius: 10000000,
+            height: windowWidth * 0.15,
+            width: windowWidth * 0.15,
+            alignItems: 'center',
+            justifyContent: 'center',
+            elevation: 10,
+            margin: windowWidth * 0.03,
+          }}>
+          <Text
+            style={{
+              color: 'white',
+              fontSize: windowWidth * 0.08,
+              fontWeight: 200,
+              backgroundColor: 'black',
+              borderRadius: 10000000,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            {'>'}
+          </Text>
+        </View>
+      </View>
     </View>
-    </ImageBackground>
-  )
+  );
 }

@@ -12,6 +12,7 @@ import Succes from './Ui_Compo/Sucess_compo'
 import Chat from './Chat_page.js/Chat'
 import Onboard_screens from './Onboard/Onboard_screens'
 import SplashScreen from './SplashScreen/SplashScreen'
+import Otp from './Auth_page/Otp'
 
 
 export default function App() {
@@ -30,6 +31,7 @@ export default function App() {
         <Stack.Screen name='PdfBrowse' component={PdfBrowse}/>
         <Stack.Screen name='Sucess' component={Succes}/>
         <Stack.Screen name='Chat' component={Chat}/>
+        <Stack.Screen name='Otp' component={Otp}/>
       </Stack.Navigator>
       </NavigationContainer>
   )

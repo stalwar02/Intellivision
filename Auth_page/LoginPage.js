@@ -17,9 +17,7 @@ const windowHeight = Dimensions.get('window').height;
 
 export default function Login({navigation}) {
   return (
-    <ImageBackground
-      style={{flex: 1}}
-      source={require('../Assets/pxfuel2.jpg')}>
+    <View style={{flex: 1, backgroundColor: '#1e1b38'}}>
       <Animatable.View
         duration={500}
         useNativeDriver={true}
@@ -123,13 +121,13 @@ export default function Login({navigation}) {
               height: '100%',
               width: windowWidth * 0.3,
               borderRadius: windowWidth * 0.025,
-              backgroundColor: 'rgb(104, 89, 235)',
+              backgroundColor: 'rgb(255, 255, 255)',
               elevation: 10,
               flexDirection: 'row',
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-            <Text style={{fontSize: windowWidth * 0.035, color: 'white'}}>
+            <Text style={{fontSize: windowWidth * 0.035, color: 'black'}}>
               Login
             </Text>
             {/* <View
@@ -141,7 +139,7 @@ export default function Login({navigation}) {
                 alignItems: 'center',
                 justifyContent: 'center',
               }}>
-             
+
             </View> */}
           </View>
         </View>
@@ -204,6 +202,6 @@ export default function Login({navigation}) {
           </TouchableOpacity>
         </View>
       </Animatable.View>
-    </ImageBackground>
+    </View>
   );
 }

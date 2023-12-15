@@ -16,9 +16,7 @@ const windowHeight = Dimensions.get('window').height;
 
 export default function SignPage({navigation}) {
   return (
-    <ImageBackground
-      style={{flex: 1}}
-      source={require('../Assets/pxfuel2.jpg')}>
+    <View style={{flex: 1, backgroundColor: '#1e1b38'}}>
       <Animatable.View
         useNativeDriver={true}
         animation="fadeIn"
@@ -144,7 +142,7 @@ export default function SignPage({navigation}) {
             </View>
           </View>
 
-          <TouchableOpacity onPress={() => navigation.navigate('Main')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Otp')}>
             <View
               style={{
                 marginTop: windowHeight * 0.05,
@@ -159,11 +157,11 @@ export default function SignPage({navigation}) {
                   height: windowHeight * 0.065,
                   width: windowWidth * 0.35,
                   borderRadius: windowWidth * 0.025,
-                  backgroundColor: 'rgb(104, 89, 235)',
+                  backgroundColor: 'rgb(255, 255, 255)',
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}>
-                <Text style={{fontSize: windowWidth * 0.035, color: 'white'}}>
+                <Text style={{fontSize: windowWidth * 0.035, color: 'black'}}>
                   Create
                 </Text>
 
@@ -202,6 +200,6 @@ export default function SignPage({navigation}) {
           </View>
         </ScrollView>
       </Animatable.View>
-    </ImageBackground>
+    </View>
   );
 }
