@@ -2,7 +2,6 @@
 import {
   View,
   Text,
-  ImageBackground,
   StatusBar,
   Image,
   TouchableOpacity,
@@ -58,10 +57,10 @@ export default function Login({navigation}) {
             style={{
               flex: 1,
               width: '100%',
-              backgroundColor: 'grey',
               marginBottom: windowHeight * 0.015,
               borderRadius: windowWidth * 0.04,
               opacity: 0.7,
+              backgroundColor: '#292250',
               flexDirection: 'row',
               alignItems: 'center',
               paddingLeft: windowWidth * 0.04,
@@ -80,13 +79,13 @@ export default function Login({navigation}) {
             style={{
               flex: 1,
               width: '100%',
-              backgroundColor: 'grey',
               marginBottom: windowHeight * 0.015,
               borderRadius: windowWidth * 0.04,
               opacity: 0.7,
               flexDirection: 'row',
               alignItems: 'center',
               paddingLeft: windowWidth * 0.04,
+              backgroundColor: '#292250',
             }}>
             <Image
               source={require('../Assets/key.png')}
@@ -112,7 +111,7 @@ export default function Login({navigation}) {
             style={{
               fontSize: windowWidth * 0.035,
               fontWeight: 400,
-              color: '#22A7F0',
+              color: '#8171dd',
             }}>
             Forgot Password ?
           </Text>
@@ -121,13 +120,13 @@ export default function Login({navigation}) {
               height: '100%',
               width: windowWidth * 0.3,
               borderRadius: windowWidth * 0.025,
-              backgroundColor: 'rgb(255, 255, 255)',
+              backgroundColor: '#6a55e0',
               elevation: 10,
               flexDirection: 'row',
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-            <Text style={{fontSize: windowWidth * 0.035, color: 'black'}}>
+            <Text style={{fontSize: windowWidth * 0.035, color: 'white'}}>
               Login
             </Text>
             {/* <View

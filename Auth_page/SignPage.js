@@ -52,7 +52,7 @@ export default function SignPage({navigation}) {
               style={{
                 flex: 1,
                 width: '100%',
-                backgroundColor: 'grey',
+                backgroundColor: '#292250',
                 marginBottom: windowHeight * 0.015,
                 borderRadius: windowWidth * 0.04,
                 opacity: 0.7,
@@ -75,7 +75,7 @@ export default function SignPage({navigation}) {
               style={{
                 flex: 1,
                 width: '100%',
-                backgroundColor: 'grey',
+                backgroundColor: '#292250',
                 marginBottom: windowHeight * 0.015,
                 borderRadius: windowWidth * 0.04,
                 opacity: 0.7,
@@ -98,7 +98,7 @@ export default function SignPage({navigation}) {
               style={{
                 flex: 1,
                 width: '100%',
-                backgroundColor: 'grey',
+                backgroundColor: '#292250',
                 marginBottom: windowHeight * 0.015,
                 borderRadius: windowWidth * 0.04,
                 opacity: 0.7,
@@ -121,7 +121,7 @@ export default function SignPage({navigation}) {
               style={{
                 flex: 1,
                 width: '100%',
-                backgroundColor: 'grey',
+                backgroundColor: '#292250',
                 marginBottom: windowHeight * 0.015,
                 borderRadius: windowWidth * 0.04,
                 opacity: 0.7,
@@ -157,11 +157,12 @@ export default function SignPage({navigation}) {
                   height: windowHeight * 0.065,
                   width: windowWidth * 0.35,
                   borderRadius: windowWidth * 0.025,
-                  backgroundColor: 'rgb(255, 255, 255)',
+                  backgroundColor: '#6a55e0',
                   alignItems: 'center',
                   justifyContent: 'center',
+                  elevation: 5,
                 }}>
-                <Text style={{fontSize: windowWidth * 0.035, color: 'black'}}>
+                <Text style={{fontSize: windowWidth * 0.035, color: 'white'}}>
                   Create
                 </Text>
 

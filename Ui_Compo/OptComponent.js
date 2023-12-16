@@ -48,7 +48,7 @@ export const OTPcomponent = ({onResendPress, onConfirmPress, Loading}) => {
         }}
         inputCount={5}
         autoFocus={true}
-        tintColor={'rgb(146, 146, 146)'}
+        tintColor={'#6a55e0'}
         handleTextChange={e => {
           if (e.length === 5) {
             onConfirmPress(e);
@@ -68,7 +68,7 @@ export const OTPcomponent = ({onResendPress, onConfirmPress, Loading}) => {
         }}
         style={{paddingVertical: 20}}>
         {!Loading ? (
-          <Text style={{color: 'rgb(88, 132, 252)'}}>Resend code</Text>
+          <Text style={{color: 'rgb(123, 88, 252)'}}>Resend code</Text>
         ) : (
           <ActivityIndicator />
         )}

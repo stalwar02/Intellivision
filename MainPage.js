@@ -3,13 +3,13 @@ import {
   View,
   Dimensions,
   Text,
-  ImageBackground,
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
 import {TextInput} from 'react-native-gesture-handler';
 import {Image} from 'react-native-animatable';
+import TabView from './Ui_Compo/TabView';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -42,7 +42,7 @@ export default function MainPage({navigation}) {
           }}>
           Ankit Kumar Shah
         </Text>
-        <ScrollView horizontal={true}>
+        {/* <ScrollView horizontal={true}>
           <EachCard
             title={'TALK WITH PDF'}
             discreption={'Chat with your pdf and get the best out of it'}
@@ -63,7 +63,45 @@ export default function MainPage({navigation}) {
             image={require('./Assets/audio.png')}
             route={''}
           />
-        </ScrollView>
+        </ScrollView> */}
+        <View
+          style={{
+            flexDirection: 'row',
+            gap: 20,
+            marginTop: 20,
+          }}>
+          <EachCard
+            title={'PDF'}
+            discreption={'Chat with your pdf and get the best out of it'}
+            image={require('./Assets/pdf.png')}
+            color={'rgba(48, 89, 136, 0.30)'}
+          />
+          <EachCard
+            title={'WEBPAGE'}
+            discreption={'Chat with your pdf and get the best out of it'}
+            image={require('./Assets/webpage.png')}
+            color={'rgba(136, 98, 48, 0.30)'}
+          />
+        </View>
+        <View
+          style={{
+            flexDirection: 'row',
+            gap: 20,
+            marginTop: 20,
+          }}>
+          <EachCard
+            title={'AUDIO'}
+            discreption={'Chat with your pdf and get the best out of it'}
+            image={require('./Assets/audio.png')}
+            color={'rgba(136, 48, 48, 0.30)'}
+          />
+          <EachCard
+            title={'AI'}
+            discreption={'Chat with your pdf and get the best out of it'}
+            image={require('./Assets/ai.png')}
+            color={'#2c2250'}
+          />
+        </View>
         <View
           style={{
             flexDirection: 'row',
@@ -71,7 +109,7 @@ export default function MainPage({navigation}) {
 
             paddingTop: 20,
           }}>
-          <Image
+          {/* <Image
             source={{
               uri: 'https://icon-library.com/images/white-folder-icon-png/white-folder-icon-png-22.jpg',
             }}
@@ -80,11 +118,17 @@ export default function MainPage({navigation}) {
               width: windowWidth * 0.05,
               objectFit: 'contain',
             }}
-          />
-          <Text style={{fontSize: windowWidth * 0.05, paddingLeft: 10}}>
+          /> */}
+          <Text
+            style={{
+              fontSize: windowWidth * 0.05,
+              color: 'rgb(228, 228, 228)',
+              fontWeight: 'bold',
+            }}>
             Your Files
           </Text>
         </View>
+        <TabView />
         <View
           style={{
             flex: 1,
@@ -123,79 +167,113 @@ export default function MainPage({navigation}) {
   );
 }
 
-function EachCard({title, discreption, route, image}) {
+function EachCard({title, discreption, route, image, color}) {
   return (
-    <View
+    <TouchableOpacity
       style={{
-        height: windowHeight * 0.39,
-        width: windowWidth * 0.7,
-        backgroundColor: '#493fa0',
+        flex: 1,
+        backgroundColor: color,
         borderRadius: 10,
-        marginRight: windowWidth * 0.035,
-        marginTop: windowHeight * 0.015,
-        overflow: 'hidden',
-        elevation: 20,
-        paddingBottom: windowHeight * 0.02,
+        alignContent: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingBottom: 20,
       }}>
-      <Image
-        style={{
-          flex: 1,
-          borderBottomLeftRadius: 20,
-          borderBottomRightRadius: 20,
-          width: '100%',
-          objectFit: 'contain',
-        }}
-        source={image}
-      />
-      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-        <View
+      <Image source={image} style={{height: 100, width: 100}} />
+      <View>
+        <Text
           style={{
-            maxWidth: windowWidth * 0.5,
+            color: 'rgb(240, 240, 240)',
+            fontSize: 20,
+            fontWeight: 'bold',
+            paddingHorizontal: 10,
           }}>
-          <Text
-            style={{
-              color: 'white',
-              fontSize: windowWidth * 0.05,
-              fontWeight: 'bold',
-              padding: windowWidth * 0.028,
-            }}>
-            {title}
-          </Text>
-          <Text
-            style={{
-              color: 'white',
-              fontSize: windowWidth * 0.03,
-              paddingHorizontal: windowWidth * 0.028,
-            }}>
-            {discreption}
-          </Text>
-        </View>
-        <View
+          {title}
+        </Text>
+        <Text
           style={{
-            backgroundColor: 'black',
-            borderWidth: 2,
-            borderRadius: 10000000,
-            height: windowWidth * 0.15,
-            width: windowWidth * 0.15,
-            alignItems: 'center',
-            justifyContent: 'center',
-            elevation: 10,
-            margin: windowWidth * 0.03,
+            paddingHorizontal: 10,
           }}>
-          <Text
-            style={{
-              color: 'white',
-              fontSize: windowWidth * 0.08,
-              fontWeight: 200,
-              backgroundColor: 'black',
-              borderRadius: 10000000,
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}>
-            {'>'}
-          </Text>
-        </View>
+          {discreption}
+        </Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
+
+// function EachCard({title, discreption, route, image}) {
+//   return (
+//     <View
+//       style={{
+//         height: windowHeight * 0.39,
+//         width: windowWidth * 0.7,
+//         backgroundColor: '#493fa0',
+//         borderRadius: 10,
+//         marginRight: windowWidth * 0.035,
+//         marginTop: windowHeight * 0.015,
+//         overflow: 'hidden',
+//         elevation: 20,
+//         paddingBottom: windowHeight * 0.02,
+//       }}>
+//       <Image
+//         style={{
+//           flex: 1,
+//           borderBottomLeftRadius: 20,
+//           borderBottomRightRadius: 20,
+//           width: '100%',
+//           objectFit: 'contain',
+//         }}
+//         source={image}
+//       />
+//       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+//         <View
+//           style={{
+//             maxWidth: windowWidth * 0.5,
+//           }}>
+//           <Text
+//             style={{
+//               color: 'white',
+//               fontSize: windowWidth * 0.05,
+//               fontWeight: 'bold',
+//               padding: windowWidth * 0.028,
+//             }}>
+//             {title}
+//           </Text>
+//           <Text
+//             style={{
+//               color: 'white',
+//               fontSize: windowWidth * 0.03,
+//               paddingHorizontal: windowWidth * 0.028,
+//             }}>
+//             {discreption}
+//           </Text>
+//         </View>
+//         <View
+//           style={{
+//             backgroundColor: 'black',
+//             borderWidth: 2,
+//             borderRadius: 10000000,
+//             height: windowWidth * 0.15,
+//             width: windowWidth * 0.15,
+//             alignItems: 'center',
+//             justifyContent: 'center',
+//             elevation: 10,
+//             margin: windowWidth * 0.03,
+//           }}>
+//           <Text
+//             style={{
+//               color: 'white',
+//               fontSize: windowWidth * 0.08,
+//               fontWeight: 200,
+//               backgroundColor: 'black',
+//               borderRadius: 10000000,
+//               alignItems: 'center',
+//               justifyContent: 'center',
+//             }}>
+//             {'>'}
+//           </Text>
+//         </View>
+//       </View>
+//     </View>
+//   );
+// }
